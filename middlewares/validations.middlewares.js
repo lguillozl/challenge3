@@ -28,7 +28,6 @@ const checkValidations = (req, res, next) => {
   if (!errors.isEmpty()) {
     const messages = errors.array().map(({ msg }) => msg);
 
-    // [msg, msg, msg] -> 'msg. msg. msg'
     const errorMsg = messages.join('. ');
 
     return res.status(400).json({
